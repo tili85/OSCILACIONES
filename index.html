@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción de la Aplicación</title>
+    <style>
+        #cerrarBoton, #mostrarBoton {
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        #mostrarBoton {
+            background-color: #4CAF50; /* Verde */
+        }
+        #contenido {
+            transition: opacity 0.5s;
+        }
+        #contenido.oculto {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido">
+        <h1>Descripción de la Aplicación</h1>
+        <p>
+            Esta aplicación es para conocer las variaciones climáticas en cuencas.
+            Se puede bajar la información en diferentes formatos.
+        </p>
+        <p>
+            Cuando se presiona el botón "ANALIZAR CLIMA", se despliega un panel que le mostrará
+            las variaciones climáticas de la cuenca seleccionada a partir del año 1980 y hasta el 2020.
+            Estos datos y los gráficos se pueden obtener en formato CSV o PNG. Solo tiene que presionar
+            los botones que se muestran en la esquina superior izquierda de la gráfica.
+        </p>
+        <p>
+            Al presionar el botón "Visualizar modelo de elevación", lo llevará a un panel de descarga.
+            Solo siga las instrucciones:
+        </p>
+        <ol>
+            <li>
+                Al presionar "Haz click aqui para descargar", el DEM se descargará en "Descargas" de su computadora
+                de donde lo puede bajar al sitio que desee.
+            </li>
+        </ol>
+        <p>
+            Al presionar los botones: "Descargar Cuenca" o "Descargar Rios" lo llevará a un panel de descarga donde deberá:
+        </p>
+        <ol>
+            <li>
+                Presionar "haz click aqui para descargar": este paso descargará un archivo en formato "json" a su carpeta de descargas
+                que contiene la información necesaria del archivo SHAPE.
+            </li>
+            <li>
+                Presione el botón "Convertir a SHAPE on Line". Esto lo llevará a una plataforma gratuita de descarga (MyGeodata). Solo siga estos pasos:
+                <ol type="a">
+                    <li>
+                        Presione "Browse files to convert": Aquí busque el archivo "json" que se bajo a su carpeta de descargas y ábralo. Automáticamente se descargará.
+                    </li>
+                    <li>
+                        Una vez descargado, presione el botón "NEXT".
+                    </li>
+                    <li>
+                        Aparecerán los metadatos del archivo y si todo esta bien, presione "Looks good".
+                    </li>
+                    <li>
+                        Aparecerá un panel donde puede seleccionar un sistema de coordenadas, pero normalmente se deja por default.
+                    </li>
+                    <li>
+                        Active la casilla "Show all coordinate systems (skip spatial filter)" y presione "convert".
+                    </li>
+                    <li>
+                        Aparecerá una pantalla de descarga donde deberá indicar donde quiere que se guarden los datos del archivo "SHAPE".
+                    </li>
+                    <li>
+                        Cierre la ventana y la página de MyGeodata, para regresar a la aplicación.
+                    </li>
+                    <li>
+                        Abrir el archivo en su SIG de preferencia.
+                    </li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+    <button id="cerrarBoton" onclick="document.getElementById('contenido').classList.add('oculto')">Ocultar</button>
+    <button id="mostrarBoton" onclick="document.getElementById('contenido').classList.remove('oculto')">Mostrar</button>
+</body>
+</html>
